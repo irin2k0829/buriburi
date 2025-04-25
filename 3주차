@@ -1,0 +1,90 @@
+def show_division(dividend, divisor):
+    quotient = dividend // divisor
+    remainder = dividend % divisor
+
+    print('몫:', quotient, '나머지:', remainder)
+
+n1 = int(input('피젯수를 정수로 입력하세요: '))
+n2 = int(input('젯수를 정수로 입력하세요: '))
+show_division(n1, n2)
+
+
+total_cost = int(input('구매한 물건의 총 구매 금액은?'))
+payment = int(input('고객으로부터 지불받은 금액은?'))
+change = payment - total_cost
+
+def show_change(amount):
+    print('잔돈:', amount, '원')
+    n5000 = amount // 5000
+    amount %= 5000
+    n1000 = amount // 1000
+    print('> 5000원권', n5000, '장')
+    print('> 1000원권', n1000, '장')
+
+show_change(change)
+
+
+def fahrenheit_to_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5 / 9
+    return celsius
+def get_real(prompt):
+    res = float(input(prompt))
+    return res
+
+ftemp = get_real('변환하고자 하는 화씨 온도는? ')
+otemp = fahrenheit_to_celsius(ftemp)
+print('화씨', ftemp, '도는 섭씨', otemp)
+
+
+def convert_time(sec):
+    s = sec
+    h = s // 3600
+    s %= 3600
+
+    m = s // 60
+    s %= 60
+
+    print(sec, '초는', h, '시간', m, '분', s, '초입니다.')
+
+def get_integer(prompt):
+    res = int(input(prompt))
+    return res
+sec = get_integer('변환하고자 하는 초는? ')
+
+convert_time(sec)
+
+
+def get_integer(prompt):
+    res = int(input(prompt))
+    return res;
+
+def set_all_bits(n):
+    return (1 << n) - 1
+
+n = get_integer('설정할 비트 수는? ')
+b = set_all_bits(n)
+
+print(n, '비트를 모두 1로 설정한 수는', b, '(', bin(b), ')이다.')
+
+
+def exchange(money):
+    n500 = money // 500
+    money %= 500
+    n100 = money // 100
+    money %= 100
+    n50 = money // 50
+    money %= 50
+    n10 = money // 10
+
+    print('500원 동전의 개수:', n500)
+    print('100원 동전의 개수:', n100)
+    print('50원 동전의 개수:', n50)
+    print('10원 동전의 개수:', n10)
+
+def get_integer(prompt):
+    res = int(input(prompt))
+    return res
+
+money = get_integer('동전으로 교환하고자 하는 금액은?')
+
+exchange(money)

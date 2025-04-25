@@ -1,0 +1,23 @@
+def make_message(name):
+    msg = '반가워요' + name
+    return msg
+
+print('시작')
+input_name = input('당신의 이름은?')
+result = make_message(input_name)
+print(result)
+print('마침')
+
+
+def get_circle_area(radius):
+    area = 3.14 * radius * radius
+    return area
+
+def get_radius(prompt):
+    r = int(input(prompt))
+    return r
+
+r = get_radius('넓이를 구하고자 하는 원의 반지름은?')
+
+res = get_circle_area(r)
+print('반지름', r , '인 원의 넓이는 = 3.14 *', r, '*', r, '=', res, sep='')
