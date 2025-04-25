@@ -1,0 +1,154 @@
+
+def printInfo():
+    
+def inputCmd():
+
+def setCountry(country):
+
+def calculate(country):
+
+dict = {'미국':1468.94, '영국':1907.71, '중국':202.01, '일본':976.35}
+
+def program():
+    country = "미국"
+    printInfo()
+    while True:
+        cmd = inputCmd()
+        if cmd == '0':
+            print("프로그램을 종료합니다.")
+            break
+        elif cmd == '1':
+            calculate(country)
+        elif cmd == '2':
+            country = setCountry(country)
+        else:
+            print("올바르지 않은 입력입니다.")
+            print("다시 입력해주세요")
+            
+program()
+
+
+def isPrime1(num):
+    if num == 1:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+def isPrime2(num):
+    if num == 1:
+        return False
+    i = 2;
+    while i * i <= num:
+        if num % i == 0:
+            return False
+        i += 1
+    return True
+
+num = int(input())
+if isPrime2(num):
+    print(f"{num}은 소수 입니다.")
+else:
+    print(f"{num}은 소수가 아닙니다.")
+
+def form1(num, base):
+    if num == 1:
+        print(num, end="")
+        return
+    form1(num // base, base)
+    print(num % base, end="")
+
+lst = []
+def form2(num, base):
+    global lst
+    if num == 1:
+        lst.append(num)
+        return
+    lst.append(num % base)
+    form2(num // base, base)
+
+    
+form1(5, 2)
+print()
+form2(5, 2)
+for i in range(len(lst) - 1, -1, -1):
+    print(lst[i], end="")
+
+
+lst1 = list(map(int, input().split()))
+lst2 = list(map(int, input().split()))
+
+def func(lst1, lst2):
+	for v in lst1:
+	    if v in lst2:
+	        print(v)
+func(lst1, lst2)
+
+string = input()
+
+def func(string):
+    l = [0 for _ in range(26)]
+    for ch in string:
+        l[ord(ch) - ord('a')] += 1
+        
+    for i in range(26):
+        if l[i] != 0:
+            print(chr(i + ord('a')), ":", l[i])
+
+func(string)
+
+
+def printInfo():
+    print("\n=================================")
+    print("환율 계산 프로그램입니다.")
+    print("입력은 숫자 하나로 실행합니다.")
+    print("처음 환율 기준 국가는 미국입니다.")
+    print("=================================")
+    
+def printCmd():
+    print("\n=================================")
+    print("1: 환율을 계산합니다.")
+    print("2: 국가를 선택합니다.")
+    print("0: 프로그램을 종료합니다.")
+    print("=================================")
+    return input("명령을 입력하세요: ")
+
+def setCountry(country):
+    print("\n=================================")
+    print("현재 국가는", country, "입니다.")
+    cmd = input("국가를 입력하세요: ")
+    if cmd not in dict.keys():
+        print("국가가 잘못 입력되었습니다. 다시 입력해주세요")
+        return setCountry(country)
+    print("국가를", cmd, "(으)로 변경하였습니다.")
+    print("=================================")
+    return cmd
+
+def calculate(country):
+    print("\n=================================")
+    print("현재 국가는", country, "입니다.")
+    money = float(input("환전할 금액을 원화로 입력하세요: "))
+    print("계산된 금액은", round(money / dict[country], 3), "입니다.")
+    print("=================================")
+    
+    
+dict = {'미국':1468.94, '영국':1907.71, '중국':202.01, '일본':976.35}
+
+def program():
+    country = "미국"
+    printInfo()
+    while True:
+        cmd = printCmd()
+        if cmd == '0':
+            print("프로그램을 종료합니다.")
+            break
+        elif cmd == '1':
+            calculate(country)
+        elif cmd == '2':
+            country = setCountry(country)
+        else:
+            print("올바르지 않은 입력입니다.")
+            print("다시 입력해주세요")
+            
+program()
